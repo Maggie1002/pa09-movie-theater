@@ -5,7 +5,8 @@
 // CSN Academic Integrty Policy while completeing this assignment.
 // Brief Program Description: Starter code for Movie Theater Booking System
 // using 2D arrays and structs.
-// @note
+// @note I spent about 6ish hours completing this assignment. I recieved help
+// from tri tran to help me out with github
 
 #include <iostream>
 #include <iomanip>
