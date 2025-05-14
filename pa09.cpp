@@ -44,7 +44,7 @@ int main() {
     int menuChoice;
 
     // Initialize seating chart
-    for (row = 0; row < MAX_SEATS; row++)
+    for (row = 0; row < MAX_ROWS; row++)
     {
         for (col = 0; col < MAX_SEATS; col++) {
             seats[row][col].isBooked = false;
@@ -90,14 +90,14 @@ int main() {
  */
 void displaySeatingChart(const Seat seats[][MAX_SEATS]) {
     cout << "\n     Seating Chart (O = Open, X = Booked)\n";
-    cout << "   ";
+    cout << "     "; //5
     for (int i = 1; i <= MAX_SEATS; i++)
-        cout << setw(2) << i << " ";
+        cout << setw(3) << i;
     cout << endl;
     for (int row = 0; row < MAX_ROWS; row++) {
-        cout<< "Row" << row +1 << ": ";
+        cout<< "Row" << setw(1) << row +1 << ":";
         for (int col = 0; col < MAX_SEATS; col++) {
-            cout << (seats[row][col].isBooked ? " X " : " O ");
+            cout << setw(3) << (seats[row][col].isBooked ? "X" : "O");
         }
         cout << endl;
     }
@@ -200,14 +200,14 @@ void displaySalesSummary(const Seat seats[][MAX_SEATS], double totalSales)
  */
 int displayMenu()
 {
-    int choice;
+    int menuChoice;
     cout << "\n1. Display Seating Chart\n";
     cout << "2. Book a Seat\n";
     cout << "3. Cancel a Booking\n";
     cout << "4. View Sales Summary\n";
     cout << "5. Exit\n";
     cout << "Enter your choice: ";
-    cin >> choice;
+    cin >> menuChoice;
 
-    return choice;
+    return menuChoice;
 }
