@@ -1,7 +1,7 @@
 // @file: pa09.cpp
 // @author: Maggie White
 // @date: May 14th, 2025
-// @noote I pledge my word of honor that I have complied with the
+// @note I pledge my word of honor that I have complied with the
 // CSN Academic Integrty Policy while completeing this assignment.
 // Brief Program Description: Starter code for Movie Theater Booking System
 // using 2D arrays and structs.
@@ -37,8 +37,8 @@ void displaySalesSummary(const Seat seats[][MAX_SEATS], double totalSales);
 int displayMenu();
 
 int main() {
-    Seat seats[MAX_ROWS][MAX_SEATS];
-    double totalSales = 0.0;
+    Seat seats[MAX_ROWS][MAX_SEATS];    //2D array of Seat structs
+    double totalSales = 0.0;            //Total sales accumulator
     int row;
     int col;
     int menuChoice;
@@ -61,16 +61,16 @@ int main() {
 
         switch (menuChoice) {
             case 1:
-                displaySeatingChart(seats);
+                displaySeatingChart(seats);     //Show seating layout
                 break;
             case 2:
-                bookSeat(seats, totalSales);
+                bookSeat(seats, totalSales);    //book a seat
                 break;
             case 3:
-                cancelSeat(seats, totalSales);
+                cancelSeat(seats, totalSales);  // Cancel a seat
                 break;
             case 4:
-                displaySalesSummary(seats, totalSales);
+                displaySalesSummary(seats, totalSales); //Show sales info
                 break;
             case 5:
                 cout << "Thank you for using the C++ Theater Booking System!" << endl;
@@ -79,7 +79,7 @@ int main() {
                 cout << "Invalid selection. Please try again.\n";
         }
 
-    } while (menuChoice != 5);
+    } while (menuChoice != 5); //repeat until user chooses to exit
 
     return 0;
 }
